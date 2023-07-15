@@ -1,5 +1,4 @@
 import PySimpleGUI as sg
-import MedEase
 From tkinter import Tk
 
 def main():
@@ -28,13 +27,7 @@ def main():
         return [
             sg.Listbox(['Add Medication'],size=(60,6),key=f'input-{Medication}', select_mode=sg.LISTBOX_SELECT_MODE_MULTIPLE, pad=(0,5))
         ]
-    layoutR = [
-        [sg.Text('Yuvraj Opt-out:')], formatLR('Yuvraj'), 
-        [sg.Text('Meer Opt-out:')], formatLR("Meer"), 
-        [sg.Text('Thenu Opt-out:')], formatLR("Thenu"), 
-        [sg.Text('Cynthia Opt-out:')], formatLR("Cynthia"), 
-        [sg.Text('Sarah Opt-out:')], formatLR("Sarah")
-
+    
     
         elif event == 'Doctor':
             window.close()
