@@ -47,7 +47,7 @@ def run_reminder_section(user):
 
     # Check reminder time and play sound
     if flag:
-        reminder_time = time.strftime("%H:%M:%S", time.localtime(time.time() + interval))
+        reminder_time = time.strftime("%H:%M:%S", time.localtime(time.time() + interval*60*60))
         while True:
             current_time = time.strftime("%H:%M:%S")
 
