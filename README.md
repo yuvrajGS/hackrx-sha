@@ -35,7 +35,8 @@ Medication Maven is an application demo developed as part of the HackRX hackatho
 4. Update the database connection details:
 
   - Open db.py and modify the host, user, password, and database variables             according to your MySQL configuration.
-5. Run the application:
+
+## Run the application:
 
 python index.py
 
