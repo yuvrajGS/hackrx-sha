@@ -16,9 +16,10 @@ layout_login = [
 ]
 
 # Create the login window
-window_login = sg.Window("Medication Maven - Login", layout_login)
+window_login = sg.Window("MedEase - Login", layout_login)
 
 # Event loop for the login window
+
 while True:
     event, values = window_login.read()
 
@@ -36,11 +37,11 @@ while True:
         if user:
             # Close the login window and open the main window
             flag = True
+            window_login.close()
+            dashboard(user)
             break
         else:
             sg.popup("Invalid username or password")
 
 # Close the login window
 window_login.close()
-if (flag):
-    dashboard()

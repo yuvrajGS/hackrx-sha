@@ -36,3 +36,14 @@ cursor.execute("""
 
 # Commit the changes
 db.commit()
+
+def get_reminders(user_id):
+    cursor = db.cursor()
+    cursor.execute("SELECT medication_name, interval_hours, description, taken FROM reminders WHERE user_id = %s", (user_id,))
+    reminders = cursor.fetchall()
+    return reminders
+
+def store_reminder(user_id, medication_name, interval_hours, description):
+    cursor = db.cursor()
+    cursor.execute("INSERT INTO reminders (user_id, medication_name, interval_hours, description) VALUES (%s, %s, %s, %s)", (user_id, medication_name, interval_hours, description))
+    db.commit()
