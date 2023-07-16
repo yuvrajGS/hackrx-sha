@@ -1,27 +1,24 @@
 import PySimpleGUI as sg
-from tkinter import Tk
 
-def main():
-    sg.theme('DarkAmber')   # Add a touch of color
-    # All the stuff inside your window.
-    loginlayout = [  [sg.Text('Welcome to MedEase!')],
-                [sg.Text('Please select your user type:')],
-                [sg.Button('Patient'), sg.Button('Doctor'), sg.Button('Pharmacist'), sg.Button('Admin')],
-                [sg.Button('Exit')] ]
-    
+def dashboard():
+    # Define the layout for the dashboard section
+    layout = [
+        [sg.Text("Dashboard", font=("Helvetica", 25))],
+        [sg.Text("Welcome to the dashboard! Here you can view your medication schedule and access various other functions.")],
+        [sg.Text("Medication Schedule", font=("Helvetica", 15))],
+    ]
 
-    # Create the Window
-    window = sg.Window('MedEase', loginlayout)
-    # Event Loop to process "events" and get the "values" of the inputs
+    # Create the dashboard window 
+    window_reminder = sg.Window("Medication Maven - Dashboard", layout, finalize=True)
+
+
+    # Event loop for the dashboard window
     while True:
-        event, values = window.read()
+        event, values = window_reminder.read()
 
-        if event == sg.WIN_CLOSED or event == 'Exit': # if user closes window or clicks cancel
+        if event == sg.WINDOW_CLOSED or event == "Close":
             break
-        
-    
 
-    window.close()
+    # Close the reminder window
+    window_reminder.close()
 
-if __name__ == '__main__':
-    main()
